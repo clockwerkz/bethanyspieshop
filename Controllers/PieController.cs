@@ -1,4 +1,5 @@
 ﻿using bethanyspieshop.Models;
+using bethanyspieshop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,12 @@ namespace bethanyspieshop.Controllers
 
         public ViewResult List()
         {
-            return View(_pieRepository.AllPies);
+            PiesListViewModel piesListViewModel = new PiesListViewModel()
+            {
+                Pies = _pieRepository.AllPies,
+                CurrentCategory = "Cheese cakes"
+            };
+            return View(piesListViewModel);
         }
     }
 }

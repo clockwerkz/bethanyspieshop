@@ -44,7 +44,8 @@ body {
 }
 
 .thumbnail {
-    padding: 0;
+    background-color: white;
+    padding: 0.5rem;
 }
 
     .thumbnail .caption-full {

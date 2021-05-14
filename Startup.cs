@@ -46,7 +46,6 @@ namespace bethanyspieshop
             app.UseStaticFiles(); // Will allow the web app to serve static files
 
             app.UseRouting();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

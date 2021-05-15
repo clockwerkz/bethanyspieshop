@@ -1,4 +1,5 @@
 ﻿using bethanyspieshop.Models;
+using bethanyspieshop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,12 @@ namespace bethanyspieshop.Controllers
         }
         public IActionResult Index()
         {
-            
+            var homeViewModel = new HomeViewModel
+            {
+                PiesOfTheWeek = _pieRepository.PiesOfTheWeek
+            };
+
+            return View(homeViewModel);
         }
     }
 }

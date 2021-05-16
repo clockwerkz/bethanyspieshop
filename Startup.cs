@@ -31,6 +31,9 @@ namespace bethanyspieshop
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IPieRepository, PieRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+            services.AddHttpContextAccessor();
+            services.AddSession();
             services.AddControllersWithViews();
         }
 
@@ -44,6 +47,7 @@ namespace bethanyspieshop
 
             app.UseHttpsRedirection();
             app.UseStaticFiles(); // Will allow the web app to serve static files
+            app.UseSession();
 
             app.UseRouting();
             app.UseEndpoints(endpoints =>

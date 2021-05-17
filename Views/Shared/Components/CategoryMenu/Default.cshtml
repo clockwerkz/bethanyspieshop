@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<Category>
 
 
-<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-    @foreach (var category in Model)
-    {
-        <li>@category.CategoryName</li>
-    }
-</ul>
+@foreach (var category in Model)
+{
+    <a class="dropdown-item" href="#">@category.CategoryName</a>
+}
+<div class="dropdown-divider"></div>
+<a  class="dropdown-item" asp-controller="Pie" asp-action="List">Pies</a>

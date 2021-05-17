@@ -48,6 +48,8 @@ namespace bethanyspieshop.Models
                     Pie = pie,
                     Amount = 1
                 };
+
+                _appDbContext.Add(shoppingCartItem);
             } else
             {
                 shoppingCartItem.Amount++;

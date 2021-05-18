@@ -19,12 +19,12 @@ namespace bethanyspieshop.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public ViewResult List()
+        public ViewResult List(string category="")
         {
             PiesListViewModel piesListViewModel = new PiesListViewModel()
             {
-                Pies = _pieRepository.AllPies,
-                CurrentCategory = "Cheese cakes"
+                Pies = _pieRepository.AllPies.Where(p => p.Category.CategoryName.Contains(category)),
+                CurrentCategory = category == "" ? "All Pies" : category
             };
             return View(piesListViewModel);
         }

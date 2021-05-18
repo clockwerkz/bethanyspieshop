@@ -32,18 +32,10 @@
                             Pies
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @await Component.InvokeAsync("CategoryMenu") 
+                            @await Component.InvokeAsync("CategoryMenu")
                         </div>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown">
-                            Pies
-                            <b class="caret"></b>
-                        </a>
-                        @await Component.InvokeAsync("ShoppingCartSummary")
-                    </li>
-                    @await Component.InvokeAsync("CategoryMenu")
-
+                    @await Component.InvokeAsync("ShoppingCartSummary")
                 </ul>
             </div>
         </div>

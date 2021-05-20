@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Razor.TagHelpers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace bethanyspieshop.TagHelpers
+namespace BethanysPieShop.TagHelpers
 {
     public class EmailTagHelper : TagHelper
     {
@@ -14,6 +14,7 @@ namespace bethanyspieshop.TagHelpers
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "a";
+
             output.Attributes.SetAttribute("href", "mailto:" + Address);
             output.Content.SetContent(Content);
         }
